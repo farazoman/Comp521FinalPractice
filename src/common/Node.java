@@ -10,17 +10,28 @@ public class Node {
 	public Node(Point2D value, Node parent){
 		this.value = value;
 		this.parent = parent;
-		parent.addChild(this);
+		if(parent != null){
+			parent.addChild(this);
+		}
+		children = new ArrayList<Node>();
 	}
 	
 	public void addChild(Node node){
 		if(!children.contains(node)){
-			children.add(node);
+			if(!node.equals(parent)){
+				children.add(node);
+			}else{
+				int l = 0;
+			}
 		}
 	}
 	
 	public ArrayList<Node> getChildren(){
 		return children;
+	}
+	
+	public Point2D getValue(){
+		return value;
 	}
 	
 	@Override
@@ -35,11 +46,17 @@ public class Node {
 		final Node n2 = (Node)o2;
 		
 		//don't want to check nested parents because only one value of instance will exist
-		if(this.parent == null && n2.parent == null){
+		/**if(this.parent == null && n2.parent == null){
 			return this.value.equals(n2.value);
 		}else if(this.parent == null || n2.parent == null){
 			return false;
 		}
 		return (this.value.equals(n2.value) && this.parent.value.equals(n2.parent.value));
+		**/
+		return (this.value.equals(n2.value));
+	}
+	
+	public void clearChildren(){
+		children = new ArrayList<Node>();
 	}
 }

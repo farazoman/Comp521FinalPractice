@@ -11,10 +11,11 @@ import javax.swing.JPanel;
 
 public class GraphicsController extends JPanel{
 	
-	public final static int WIDTH = 500;
-	public final static int HEIGHT = 100;
+	public final static int WIDTH = 10;
+	public final static int HEIGHT = 10;
 	
 	private static MidpointBisection2D mb2;
+	private static PrimMaze prim;
 	
 	/* (non-Javadoc)
 	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
@@ -25,7 +26,8 @@ public class GraphicsController extends JPanel{
 		super.paintComponent(g);  // paint background
 		  // setBackground(Color.BLACK);
 		g.setColor(Color.BLACK);
-		mb2.draw(g);
+		//mb2.draw(g);
+		prim.draw(g);
 	
 	}
    
@@ -34,6 +36,7 @@ public class GraphicsController extends JPanel{
 		
 		GraphicsController gc = new GraphicsController();
 		mb2 = new MidpointBisection2D();
+		prim = new PrimMaze();
 		
 		JFrame frame = new JFrame("Recursive Midpoint Bisection");
 		
@@ -48,6 +51,7 @@ public class GraphicsController extends JPanel{
         gc.setFocusable(true);
         
         mb2.generateMap(WIDTH, HEIGHT);
+        prim.generateMap(WIDTH, HEIGHT);
         int x = 0;
         
         
