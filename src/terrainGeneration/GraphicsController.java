@@ -1,7 +1,7 @@
 package terrainGeneration;
 
 import java.awt.Color;
-
+import java.awt.EventQueue;
 import java.awt.Graphics;
 
 import javax.swing.JFrame;
@@ -11,11 +11,12 @@ import javax.swing.JPanel;
 
 public class GraphicsController extends JPanel{
 	
-	public final static int WIDTH = 10;
-	public final static int HEIGHT = 10;
+	public final static int WIDTH = 500;
+	public final static int HEIGHT = 100;
 	
 	private static MidpointBisection2D mb2;
 	private static PrimMaze prim;
+	private static PerlinGenerator perlin;
 	
 	/* (non-Javadoc)
 	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
@@ -27,7 +28,8 @@ public class GraphicsController extends JPanel{
 		  // setBackground(Color.BLACK);
 		g.setColor(Color.BLACK);
 		//mb2.draw(g);
-		prim.draw(g);
+		//prim.draw(g);
+		perlin.draw(g);
 	
 	}
    
@@ -37,6 +39,7 @@ public class GraphicsController extends JPanel{
 		GraphicsController gc = new GraphicsController();
 		mb2 = new MidpointBisection2D();
 		prim = new PrimMaze();
+		perlin = new PerlinGenerator();
 		
 		JFrame frame = new JFrame("Recursive Midpoint Bisection");
 		
@@ -52,8 +55,10 @@ public class GraphicsController extends JPanel{
         
         mb2.generateMap(WIDTH, HEIGHT);
         prim.generateMap(WIDTH, HEIGHT);
-        int x = 0;
-        
+        perlin.generateMap(WIDTH, HEIGHT);
+     
+        gc.repaint();
+
         
 		
 	}

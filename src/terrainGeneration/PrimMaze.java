@@ -55,9 +55,6 @@ public class PrimMaze extends MapGenerator {
 			
 			x = newTile.getValue().getX();
 			y = newTile.getValue().getY();
-			if(x < 0){
-				int i = 9;
-			}
 			
 			isRevealed[x][y] = true;
 			
@@ -82,7 +79,7 @@ public class PrimMaze extends MapGenerator {
 			
 		}
 		
-		int xdsf = 0;
+
 	}
 	
 	public void addFrontier(int x, int y, ArrayList<Node> frontiers, Node parent){
