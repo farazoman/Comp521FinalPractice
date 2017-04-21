@@ -62,10 +62,10 @@ public class PrimMaze extends MapGenerator {
 			if(children.size() != 0){
 				tempParent = children.get((int)(children.size()*Math.random()));
 				newTile.clearChildren();
+			
 				tempParent.addChild(newTile);
-				if(newTile.getValue().getX() < 0){
-					int j = 0;
-				}
+				newTile.changeParent(tempParent);
+				
 			}
 			
 			frontiers.remove(newTile);
@@ -84,12 +84,16 @@ public class PrimMaze extends MapGenerator {
 	
 	public void addFrontier(int x, int y, ArrayList<Node> frontiers, Node parent){
 		
-		Node frontier = new Node(new Point2D(x,y), parent);
+		Node frontier = null;
 		
 		//TODO check if x and y correspond to height and width properly (in case it isn't working for some reason)
 		if(x >= 0 && y >= 0 && x < width && y < height){
+
+			
 			if(isRevealed[x][y]){
 				return;
+			}else{
+				frontier = new Node(new Point2D(x,y), parent);
 			}
 			if(frontiers.contains(frontier)){
 				for(Node node : frontiers){
@@ -109,8 +113,7 @@ public class PrimMaze extends MapGenerator {
 		int x1, x2, y1;
 		int y2 = 0;
 		
-		//draws the line segments and fills the area under it with black
-	
+		//draws the line segments
 		for (int i = 0; i < children.size(); i++) {
 			x1 = scale*children.get(i).getValue().getX() + offset;
 			x2 = scale*parent.getValue().getX() + offset;

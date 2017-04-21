@@ -11,19 +11,18 @@ public class Node {
 		this.value = value;
 		this.parent = parent;
 		if(parent != null){
-			parent.addChild(this);
+			
+			//parent.addChild(this);
 		}
 		children = new ArrayList<Node>();
 	}
 	
 	public void addChild(Node node){
-		if(!children.contains(node)){
-			if(!node.equals(parent)){
+	
+			
 				children.add(node);
-			}else{
-				int l = 0;
-			}
-		}
+			
+		
 	}
 	
 	public ArrayList<Node> getChildren(){
@@ -32,6 +31,10 @@ public class Node {
 	
 	public Point2D getValue(){
 		return value;
+	}
+	
+	public void changeParent(Node p){
+		parent = p;
 	}
 	
 	@Override

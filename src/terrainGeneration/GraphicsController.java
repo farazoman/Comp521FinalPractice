@@ -11,8 +11,8 @@ import javax.swing.JPanel;
 
 public class GraphicsController extends JPanel{
 	
-	public final static int WIDTH = 500;
-	public final static int HEIGHT = 100;
+	public final static int WIDTH = 10;
+	public final static int HEIGHT = 10;
 	
 	private static MidpointBisection2D mb2;
 	private static PrimMaze prim;
@@ -28,8 +28,8 @@ public class GraphicsController extends JPanel{
 		  // setBackground(Color.BLACK);
 		g.setColor(Color.BLACK);
 		//mb2.draw(g);
-		//prim.draw(g);
-		perlin.draw(g);
+		prim.draw(g);
+		//perlin.draw(g);
 	
 	}
    
