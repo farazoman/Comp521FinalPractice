@@ -2,6 +2,7 @@ package common;
 
 import java.util.ArrayList;
 
+//sadly this class isn't really "common" as it was made to work with prims maze generation, needs to be refined
 public class Node {
 	private Point2D value;
 	private Node parent;

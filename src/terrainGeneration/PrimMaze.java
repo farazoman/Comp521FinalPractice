@@ -12,7 +12,7 @@ public class PrimMaze extends MapGenerator {
 	private int width;
 	private int height;
 	private boolean [][] isRevealed;
-	private static final int scale = 25;
+	private static final int scale = 5;
 	private static final int offset = 300;
 	
 	@Override
