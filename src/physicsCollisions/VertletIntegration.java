@@ -8,6 +8,7 @@ import common.Drawable;
 
 
 //ref: http://codeflow.org/entries/2010/sep/01/hard-constraints-easy-solutions/#all-roads-lead-to-verlet
+//ref2: https://www.gamedev.net/resources/_/technical/math-and-physics/a-verlet-based-approach-for-2d-game-physics-r2714
 public class VertletIntegration implements Drawable {
 	private VertletPoint [] points;
 	private int height, width;

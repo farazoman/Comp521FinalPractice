@@ -1,4 +1,4 @@
-package terrainGeneration;
+package common;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -9,8 +9,10 @@ import java.util.TimerTask;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import common.Drawable;
 import physicsCollisions.VertletIntegration;
+import terrainGeneration.MidpointBisection2D;
+import terrainGeneration.PerlinGenerator;
+import terrainGeneration.PrimMaze;
 
 
 

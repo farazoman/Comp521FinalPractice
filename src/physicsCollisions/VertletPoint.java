@@ -51,16 +51,12 @@ public class VertletPoint {
 	    
 	   	Point2D.Double tempPosition = (Double) position.clone();
 
-	    tempPosition.x = 2 * tempPosition.x - prevPos.x + acceleration.x;
-		tempPosition.y = tempPosition.y *2 - prevPos.y + acceleration.y;
+	    tempPosition.x = 2 * tempPosition.x - prevPos.x + acceleration.x * timeStep * timeStep;
+		tempPosition.y = tempPosition.y *2 - prevPos.y + acceleration.y * timeStep * timeStep;
 
 
 	    this.prevPos = this.position;
-	    this.position = tempPosition;
-	    //this.acceleration.zero();
-	    
-
-	
+	    this.position = tempPosition;	
 		
 	}
 
